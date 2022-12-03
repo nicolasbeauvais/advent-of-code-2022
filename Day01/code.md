@@ -1,13 +1,15 @@
 # Part 1
 
-Made with Laravel REPL (Tinker) to leverage the Collection class
+> 109 bytes
 
 ```php
-collect(file('input.txt'))->map(fn ($cal) => (int)$cal)->chunkWhile(fn ($cal) => $cal > 0)->map(fn ($col) => $col->sum())->max()
+<?php eval('echo max(['.preg_replace(['/(\n\n)/','/(\n)/'],[',','+'],file_get_contents('input.txt')).'0]);');
 ```
 
 # Part 2
 
+> 134 bytes
+
 ```php
-collect(file('input.txt'))->map(fn ($cal) => (int)$cal)->chunkWhile(fn ($cal) => $cal > 0)->map(fn ($col) => $col->sum())->sortDesc()->take(3)->sum()
+<?php eval('$t=['.preg_replace(['/(\n\n)/','/(\n)/'],[',','+'],file_get_contents('input.txt')).'0];');rsort($t);echo$t[0]+$t[1]+$t[2];
 ```
